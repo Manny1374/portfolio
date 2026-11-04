@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+    <script>try{document.documentElement.dataset.theme=localStorage.getItem("marius-portfolio-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
 </head>
 
 <body>
@@ -60,7 +61,7 @@
                 </div>
                 <div class="hero-visual">
                     <div class="card-3d">
-                        <i class="fa-solid fa-file-lines icon-3d"></i>
+                        <div class="media-placeholder" style="width:100%;height:100%;min-height:300px;border:0;"><i class="fa-regular fa-image"></i><strong>Ton portrait / une photo de projet</strong><small>Emplacement visuel à personnaliser</small></div><i class="fa-solid fa-file-lines icon-3d" style="font-size:2rem;margin:12px 0 0;"></i>
                         <div class="card-content">
                             <h3>Mon CV</h3>
                             <a href="CV.pdf" target="_blank" class="btn btn-secondary" style="margin-top: 15px;">Voir
@@ -114,6 +115,23 @@
             </div>
         </section>
 
+
+        <section id="projets" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Projets sélectionnés</h2>
+                <p class="lead" style="margin:0 auto 36px;text-align:center;">Des réalisations concrètes entre électronique, automatisme et informatique industrielle.</p>
+                <div class="project-showcase">
+                    <a class="project-tile" href="kartahelice.html">
+                        <div class="media-placeholder"><i class="fa-regular fa-images"></i><strong>Emplacement photo / vidéo</strong><small>Projet Kart à Hélice · visuel principal</small></div>
+                        <div class="project-tile-copy"><span>Électronique embarquée</span><h3>Kart à Hélice</h3><p>Conception de cartes électroniques, communication infrarouge et pilotage à distance.</p></div>
+                    </a>
+                    <a class="project-tile" href="mugochaud.html">
+                        <div class="media-placeholder"><i class="fa-regular fa-images"></i><strong>Emplacement photo / vidéo</strong><small>Projet MUGOCHAUD · visuel principal</small></div>
+                        <div class="project-tile-copy"><span>Automatisme & régulation</span><h3>MUGOCHAUD</h3><p>Automatisation et régulation thermique d'une enceinte climatique.</p></div>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
