@@ -1,4 +1,41 @@
 
+
+/* Shared theme: one preference for every page of the portfolio */
+(() => {
+  const key = 'marius-portfolio-theme';
+  let saved = 'dark';
+  try { saved = localStorage.getItem(key) || 'dark'; } catch (_) {}
+  document.documentElement.dataset.theme = saved === 'light' ? 'light' : 'dark';
+  document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('.nav-links');
+    if (nav && !document.querySelector('.theme-toggle')) {
+      const item = document.createElement('li');
+      item.className = 'theme-nav-item';
+      const button = document.createElement('button');
+      button.className = 'theme-toggle';
+      button.type = 'button';
+      button.setAttribute('aria-label', 'Changer le thème');
+      button.innerHTML = '<i class="fa-solid fa-sun" aria-hidden="true"></i><span>Clair</span>';
+      const update = () => {
+        const light = document.documentElement.dataset.theme === 'light';
+        button.innerHTML = light
+          ? '<i class="fa-solid fa-moon" aria-hidden="true"></i><span>Sombre</span>'
+          : '<i class="fa-solid fa-sun" aria-hidden="true"></i><span>Clair</span>';
+        button.setAttribute('aria-pressed', String(light));
+      };
+      button.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+        document.documentElement.dataset.theme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        update();
+      });
+      item.appendChild(button);
+      nav.appendChild(item);
+      update();
+    }
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll Reveal Animation
