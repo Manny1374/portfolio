@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport du Projet Kart à Hélice | Marius Felicetti</title>
+    <meta name="description" content="Rapport détaillé du projet de conception et fabrication d'un kart à hélice.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">Port<span class="accent">folio</span>.</a>
+            <ul class="nav-links">
+                <li><a href="index.html#hero">Présentation</a></li>
+                <li><a href="index.html#presentation">Ma Formation</a></li>
+                <li><a href="index.html#competences">Compétences</a></li>
+                <li><a href="stage.html">Expérience professionnelle</a></li>
+                <li class="nav-item-dynamic">
+                    <a href="#" id="projets-btn" class="active">Projets <i
+                            class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                    <div class="dynamic-menu">
+                        <a href="kartahelice.html" class="active" style="font-weight: bold;">Kart à Hélice</a>
+                        <a href="mugochaud.html">MUGOCHAUD</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge">Kart à Hélice</span>
+                    <h1>Projet <br><span class="gradient-text">Kart à Hélice</span></h1>
+                    <p class="lead">Conception, fabrication et vérification d'un kart propulsé par hélice. Une
+                        exploration technique de l'électronique.</p>
+                    <div class="hero-btns">
+                        <a href="#downloads" class="btn btn-primary">Télécharger les PDF</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="card-3d">
+                        <i class="fa-solid fa-wind icon-3d"></i>
+                        <div class="card-content">
+                            <h3>PROJET KART A HÉLICE</h3>
+                            <p>Électronique embarquée.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Contexte -->
+        <section id="contexte" class="section">
+            <div class="container">
+                <h2 class="section-title">Contexte du Projet</h2>
+                <div class="content-card" style="display: flex; flex-direction: column; gap: 10px;">
+                    <p>Dans le cadre de ma première année de BUT, j'ai effectué un projet en équipe avec pour objectifs
+                        principaux :</p>
+                    <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+                        <li><strong>La conception électronique :</strong> concevoir, fabriquer et vérifier une carte
+                            émettrice et une carte réceptrice pour équiper un kart miniature.</li>
+                        <li><strong>Le contrôle à distance :</strong> piloter le kart grâce à la télécommande
+                            infrarouge.</li>
+                        <li><strong>La mobilisation de compétences :</strong> mise en pratique de l'électronique, de
+                            l'informatique embarquée, de la documentation technique et de la gestion de projet.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objectifs -->
+        <section id="objectifs" class="section">
+            <div class="container">
+                <h2 class="section-title">Objectifs Techniques</h2>
+                <div class="grid-3">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-users"></i>
+                        <h3>Équipe</h3>
+                        <p>Réaliser deux cartes électroniques (émetteur et récepteur).</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-comments"></i>
+                        <h3>Communication</h3>
+                        <p>Mettre en œuvre un système de communication infrarouge entre l’émetteur et le récepteur.
+                            Assurer la sécurité de fonctionnement (notamment en cas de perte de signal).</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-check"></i>
+                        <h3>Exigences</h3>
+                        <p>Vérifier que toutes les exigences du cahier des charges sont respectées.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conception -->
+        <section id="conception" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Conception</h2>
+                <div class="split-layout">
+                    <div class="text-block">
+                        <h3>Le Microcontrôleur</h3>
+                        <p style="margin-bottom: 15px;">Dans notre projet, le récepteur du kart avait pour mission de
+                            recevoir des trames
+                            infrarouges depuis l’émetteur, de les décoder, puis d’agir sur les commandes comme le
+                            moteur ou le klaxon, de la même manière qu'une télécommande de télévision. Pour cela,
+                            nous avions besoin d’un composant permettant de traiter les informations de la trame
+                            infrarouge,
+                            un microcontrôleur. Ce composant contenant notamment un processeur et de la mémoire, sera
+                            capable
+                            d’assurer :</p>
+                        <ul class="check-list">
+                            <li><i class="fa-solid fa-check"></i> La lecture de signaux numériques</li>
+                            <li><i class="fa-solid fa-check"></i> Le décodage du protocole infrarouge</li>
+                            <li><i class="fa-solid fa-check"></i> Le traitement logique des données</li>
+                            <li><i class="fa-solid fa-check"></i> La sécurité en cas de perte de signal</li>
+                        </ul>
+                    </div>
+                    <div class="visual-block">
+                        <img src="kart_removebg.png" class="cad-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fabrication -->
+        <section id="fabrication" class="section">
+            <div class="container">
+                <h2 class="section-title">Fabrication</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Passage des cartes à l'insoleuse</h4>
+                            <p>Permet "d'imprimer" les pistes sur les cartes électroniques.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Passage à la graveuse</h4>
+                            <p>Le surplus de cuivre est enlevé des cartes ne laissant que les pistes ainsi que le plan
+                                de masse (et le texte).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Perçage de la carte</h4>
+                            <p>Trous pour les composants traversants et trous de fixation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Vérification</h4>
+                            <p>Essais fonctionnels, mesure de conformité aux exigences, rédaction du dossier de
+                                vérification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vérification -->
+        <section id="verification" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Vérification & Tests</h2>
+                <div class="content-card">
+                    <p>Notre équipe a réussi à concevoir des cartes électroniques fonctionnelles et conformes au cahier
+                        des charges.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">Opérationnel</span>
+                            <span class="stat-label">Klaxon </span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">OK</span>
+                            <span class="stat-label">Autonomie</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Validé</span>
+                            <span class="stat-label">Communication infrarouge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloads -->
+        <section id="downloads" class="section">
+            <div class="container">
+                <h2 class="section-title">Documents du Projet</h2>
+                <div class="downloads-grid">
+                    <a href="#" class="download-card">
+                        <div class="icon-box"><i class="fa-solid fa-file-pdf"></i></div>
+                        <div class="file-info">
+                            <h4>Dossier de Conception</h4>
+                            <span class="file-size">3.6 MB</span>
+                        </div>
+                        <i class="fa-solid fa-download download-icon"></i>
+                    </a>
+                    <a href="#" class="download-card">
+                        <div class="icon-box"><i class="fa-solid fa-file-pdf"></i></div>
+                        <div class="file-info">
+                            <h4>Dossier de Fabrication</h4>
+                            <span class="file-size">350.5 KB</span>
+                        </div>
+                        <i class="fa-solid fa-download download-icon"></i>
+                    </a>
+                    <a href="#" class="download-card">
+                        <div class="icon-box"><i class="fa-solid fa-file-pdf"></i></div>
+                        <div class="file-info">
+                            <h4>Dossier de Vérification</h4>
+                            <span class="file-size">8.4 MB</span>
+                        </div>
+                        <i class="fa-solid fa-download download-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+
+                <p>&copy; 2026 Marius Felicetti. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/marius-felicetti" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

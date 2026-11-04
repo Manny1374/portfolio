@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage SNCF Réseau | Marius Felicetti</title>
+    <meta name="description" content="Rapport de stage : Agent d'études en signalisation ferroviaire chez SNCF Réseau.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">Port<span class="accent">folio</span>.</a>
+            <ul class="nav-links">
+                <li><a href="index.html#hero">Présentation</a></li>
+                <li><a href="index.html#presentation">Ma Formation</a></li>
+                <li><a href="index.html#competences">Compétences</a></li>
+                <li><a href="stage.html" class="active">Expérience professionnelle</a></li>
+                <li class="nav-item-dynamic">
+                    <a href="#" id="projets-btn">Projets <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                    <div class="dynamic-menu">
+                        <a href="kartahelice.html">Kart à Hélice</a>
+                        <a href="mugochaud.html">MUGOCHAUD</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge">Stage de 10 semaines</span>
+                    <h1>SNCF <br><span class="gradient-text">Réseau</span></h1>
+                    <p class="lead">Stage en tant qu'agent d'études en signalisation ferroviaire au Pôle Ingénierie
+                        Études Signalisation de Bordeaux (PIES).</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="card-3d">
+                        <img src="stage/Logo_SNCF_Réseau_2015.svg" alt="SNCF Réseau"
+                            style="width: 150px; margin-bottom: 20px;">
+                        <div class="card-content">
+                            <p>Gestionnaire du réseau ferré national français</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contexte -->
+        <section id="contexte" class="section">
+            <div class="container">
+                <h2 class="section-title">Contexte du Stage</h2>
+                <div class="content-card" style="display: flex; flex-direction: column; gap: 10px;">
+                    <p>Mon stage s'est déroulé au Pôle Ingénierie Études Signalisation (PIES) de Bordeaux. L'étude que
+                        j'ai réalisé s'inscrit dans le projet AFSB (Aménagements Ferroviaires au Sud de Bordeaux) :</p>
+                    <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+                        <li><strong>Le projet :</strong> Augmenter le trafic en ajoutant une 3e voie et moderniser les
+                            équipements du poste 10 d'Hourcade.</li>
+                        <li><strong>L'objectif :</strong> Remplacer la logique à relais par un automate pour le contrôle
+                            des voyants d'un tableau de contrôle.</li>
+                        <li><strong>La technique :</strong> Utilisation du logiciel AutoCAD pour les modifications de
+                            plans techniques et paramétrage d'un automate SIROCCO (Système Informatique Responsable de
+                            l'Ordonnencement et du Calcul des Contrôles Optiques).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objectifs -->
+        <section id="objectifs" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Missions Techniques</h2>
+                <div class="grid-3">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <h3>Plans Techniques</h3>
+                        <p>Étude, réalisation et modification de plans techniques sur AutoCAD : pose et dépose
+                            d'éléments
+                            de voie (ajout et suppression).</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <h3>Traitement</h3>
+                        <p>Adaptation de schémas électriques et création d'équations pour paramétrer l'automate
+                            SIROCCO.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-microchip"></i>
+                        <h3>Automatisme</h3>
+                        <p>Paramétrage des entrées/sorties et fonctions dans le logiciel de l'automate SIROCCO.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conception -->
+        <section id="conception" class="section">
+            <div class="container">
+                <h2 class="section-title">Déroulement & Réalisations</h2>
+                <div class="split-layout" style="margin-left: -150px; margin-right: -150px; gap: 100px;">
+                    <div class="text-block" style="flex: 1.5;">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Découverte des plans</h4>
+                            <p>Familiarisation avec les schémas de signalisation, prise de connaissance des symboles et
+                                de leurs
+                                fonctions dans le système ferroviaire réel.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Modifications sur AutoCAD</h4>
+                            <p>Réalisation de la suppression d'un morceau de voie et de l'ajout d'un passage à niveau.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Documents d'exécution</h4>
+                            <p>Mise à jour des sorties liées aux dispositifs supprimés ou rajoutés. Adaptation de
+                                schémas électriques illustrant les conditions qui décrivent le fonctionnement des
+                                voyants.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Paramétrage Logiciel</h4>
+                            <p>Création des équations nécessaires à l'automate SIROCCO pour gérer les voyants du tableau
+                                de
+                                contrôle en fonction de différentes conditions comme la position des trains.</p>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                    <div class="visual-block" style="flex: 2.5;">
+                        <img src="stage/TCO.jpg" alt="Tableau de Contrôle Optique" style="border-radius: 20px; width: 100%; display: block; box-shadow: var(--card-shadow);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Marius Felicetti. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/marius-felicetti" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

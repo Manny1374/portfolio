@@ -1,0 +1,1931 @@
+
+========================================
+FILE: pdf\B4_DDC_EQ06_V2.pdf
+========================================
+Dossier  De  Conception  (DDC)  
+du  projet  
+MUGOCHAUD           
+Responsabilité  documentaire  
+Action  NOM  Prénom  Fonction  Date  Signature  
+Rédigé  par  
+Alyssa  RAVIER  Marius  FELICETTI  
+Technicien  21/01/2026  
+  
+Approuvé  par  
+Pierre  CAZAUX  Jocelyn  SABATIER  (IUT  GEII  Bdx)  
+Chef  de  projet  /  
+  
+Approuvé  par  Société  PCMI  Client  /  
+  
+ 
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –  11/03/2026  
+1 / 25  
+ 
+MUGOCHAUD   
+Suivi  des  révisions  documentaires  
+Indice  Date  Nature  de  la  révision  
+1  21/01/2023  
+Publication  préliminaire  du  DDC,  document  à  compléter  par  le  Technicien  2  02/02/2026  Première  publication           
+Documents  de  références  
+Sigle  Référence  Titre  Rév.  Origine  [CDC]  MOC_CDC  Cahier  des  charges  1  Société  PCMI       
+ 
+Table  des  matières  
+1.  Nature  du  document  3 2.  Conception  préliminaire  du  produit  3 3.  Conception  détaillée  du  produit  7 3.1.  Exigences  électriques  7 3.2.  Exigences  d’action  11 3.3.  Grafcet  12 3.4.  Programmation  13 3.5.  Conclusion  de  la  conception  détaillée  du  produit  14 4.  Dérisquage  des  solutions  techniques  retenues  14 4.1.  <Titre  de  la  simulation  /  prototypage  rapide>  14 4.2.  Conclusion  de  la  simulation  /  prototypage  rapide  du  produit  16 5.  Conclusion  de  la  conception  du  produit  17 6.  Matrice  de  conformité  du  produit  17   
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+2 / 25  
+ 
+MUGOCHAUD   
+1.  Nature  du  document  
+Ce  document  est  un  dossier  de  conception  et  a  pour  but  de  détailler  la  conception  du  produit  
+développé.
+ 
+Il
+ 
+apporte
+ 
+ainsi
+ 
+des
+ 
+preuves
+ 
+de
+ 
+la
+ 
+conformité
+ 
+du
+ 
+produit
+ 
+par
+ 
+rapport
+ 
+à
+ 
+l'ensemble
+ 
+des
+ 
+exigences
+ 
+client.
+ 
+Le
+ 
+paragraphe
+ 
+3
+ 
+du
+ 
+[CDC]
+ 
+décrit
+ 
+de
+ 
+façon
+ 
+plus
+ 
+détaillée
+ 
+la
+ 
+nature
+ 
+et
+ 
+le
+ 
+positionnement
+ 
+de
+ 
+ce
+ 
+document
+ 
+dans
+ 
+l'arborescence
+ 
+documentaire
+ 
+du
+ 
+projet.
+ 
+2.  Conception  préliminaire  du  produit  
+Référence  de  pré-conception:  CPR_CHRONOGRAMMES   Exigences  client  vérifiées  par  pré-conception :   EXIG_COM_VERROU  EXIG_DEVEROUILLAGE   Compétences  GEII  :  C1a   Voici  ci-dessous  la  liste  des  entrées  et  sorties  du  système  avec  les  noms  de  leurs  variables  associées.  
+Entrées  /  Sorties  Nom  variables  
+●  Capteur  porte  inductif  ●  BP  start  /  stop  ●  PT1000   ●  Electro-aimant  porte  ●  Radiateur  120W  ●  LEDs  ●  Commande  en  I   
+●  capt_porte  (1  :  ouverte  /  0  :  fermée)  ●  bp  ●  capt_temp   ●  verrou_porte  ●  radiateur  ●  led  ●  regul_temp     Après  avoir  déterminé  les  entrées  et  sorties,  les  chronogrammes  de  chaque  signal  ont  été  définis.  
+Chacun
+ 
+des
+ 
+cas
+ 
+est
+ 
+présent,
+ 
+le
+ 
+fonctionnement
+ 
+normal
+ 
+en
+ 
+figure
+ 
+1
+ 
+et
+ 
+le
+ 
+cas
+ 
+où
+ 
+a
+ 
+lieu
+ 
+une
+ 
+ouverture
+ 
+intempestive
+ 
+de
+ 
+la
+ 
+porte
+ 
+en
+ 
+figure
+ 
+2.
+ 
+Les
+ 
+temporisations
+ 
+ont
+ 
+été
+ 
+modélisées
+ 
+en
+ 
+fonction
+ 
+des
+ 
+exigences
+ 
+du
+ 
+cahier
+ 
+des
+ 
+charges
+ 
+comme
+ 
+le
+ 
+verrouillage
+ 
+de
+ 
+la
+ 
+porte
+ 
+1
+ 
+seconde
+ 
+après
+ 
+l’appui
+ 
+sur
+ 
+le
+ 
+bouton
+ 
+start/stop
+ 
+et
+ 
+le
+ 
+déverrouillage
+ 
+5
+ 
+secondes
+ 
+après
+ 
+un
+ 
+nouvel
+ 
+appui
+ 
+sur
+ 
+start/stop.
+ 
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+3 / 25  
+ 
+MUGOCHAUD   
+ Figure  1  :  Chronogrammes  des  signaux  (cas  normal)   Chronogrammes cas normal.png
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+4 / 25  
+ 
+
+MUGOCHAUD   
+ Figure  2  :  Chronogrammes  des  signaux  (cas  d'ouverture  intempestive)   Chronogrammes cas perturbation.png  Référence  de  pré-conception:  CPR_GRAFCET  Exigences  client  vérifiées  par  pré-conception :  EXIG_CYCL_FONCT  Compétences  GEII  :  C1a   Afin  de  modéliser  le  cycle  fonctionnel  du  système  et  de  traduire  le  comportement  séquentiel  défini  
+par
+ 
+les
+ 
+chronogrammes,
+ 
+le
+ 
+GRAFCET
+ 
+de
+ 
+niveau
+ 
+1
+ 
+correspondant
+ 
+est
+ 
+présenté
+ 
+ci-dessous
+ 
+(Figure
+ 
+3).
+  Grafcet.png   
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+5 / 25  
+ 
+
+MUGOCHAUD   
+ Figure  3  :  Grafcet  de  niveau  1  
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+6 / 25  
+ 
+
+MUGOCHAUD   
+3.  Conception  détaillée  du  produit  
+Ce  chapitre  détaille  la  conception  du  produit  développé.  Il  constitue  une  preuve  de  la  conformité  du  
+produit.
+ 
+Chaque
+ 
+paragraphe
+ 
+de
+ 
+cette
+ 
+étude
+ 
+fait
+ 
+donc
+ 
+clairement
+ 
+référence
+ 
+aux
+ 
+exigences
+ 
+client
+ 
+issues
+ 
+du
+ 
+[CDC].
+ 
+3.1.  Exigences  électriques  Référence  de  conception :  CDT_DETECT_FERM  Exigences  client  vérifiées :  EXIG_DETECT_FERM  Compétences  GEII  :   C1b   Pour  pouvoir  détecter  la  fermeture  de  la  porte  de  l’enceinte,  un  capteur  de  fermeture  de  porte  
+de
+ 
+type
+ 
+capteur
+ 
+de
+ 
+proximité
+ 
+inductif
+ 
+5
+ 
+mm
+ 
+SN04N
+ 
+sera
+ 
+utilisé
+ 
+pour
+ 
+répondre
+ 
+à
+ 
+l’exigence.
+ 
+Voici
+ 
+ses
+ 
+caractéristiques
+ 
+:
+ 
+ ●  Détection  :  5mm  ●  Alimentation:  6  à  36  Vcc  ●  Consommation:  15  mA  ●  Sortie:  NPN  (état  haut  au  repos  -  état  bas  lors  d'une  détection)  ●  Indication  de  travail:  led  rouge  ●  Connectique:  câble  de  1  mètre  ●  Température  de  service:  -25  à  +75  °C  ●  Protection:  IP67Sortie:  NPN  (état  haut  au  repos  -  état  bas  lors  d'une  détection)   
+ Figure  4  :  Capteur  de  proximité  inductif  5  mm  SN04N    Référence  de  conception :  CDT_VERROU  
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+7 / 25  
+ 
+
+MUGOCHAUD   
+Exigences  client  vérifiées :  EXIG_VERROU  Compétences  GEII  :   C1b    Afin  de  verrouiller  la  porte  de  l’enceinte  lors  de  son  utilisation,   un  électro-aimant  de  type  RS  
+PRO
+ 
+24V
+ 
+c.c.,
+ 
+53N
+ 
+Diam
+ 
+20mm
+ 
+sera
+ 
+utilisé
+ 
+pour
+ 
+satisfaire
+ 
+cette
+ 
+exigence.
+   
+Attribut  Valeur  Marque  RS  PRO  Type  de  produit  Aimant  de  porte  Force  de  maintien  53N  Type  de  porte  Double  porte,  Simple  porte  Fonctionnement  V  c.c.  ou  V  c.a.  c.c.  Mode  de  défaillance  Ouverture  Tension  d'alimentation  24  V  dc  Profondeur  18mm  Diamètre  20  mm  Hauteur  18mm  Finition  Plaqué  nickel  brillant  Matériau  Acier  doux  Normes/homologations  REACH  &  RoHS  compliant   
+ Figure  5  :  Electro-aimant  RS  PRO  24V  c.c.    Référence  de  conception :  CDT_CHAUF  Exigences  client  vérifiées :  EXIG_CHAUF  
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+8 / 25  
+ 
+
+MUGOCHAUD   
+Compétences  GEII  :   C1b  MUGOCHAUD  doit  pouvoir  maintenir  l’enceinte  climatique  à  des  températures  comprises  
+entre
+ 
+40°C
+ 
+et
+ 
+80°C
+ 
+(±
+ 
+0,1°C),
+ 
+dans
+ 
+un
+ 
+environnement
+ 
+extérieur
+ 
+compris
+ 
+entre
+ 
+0°C
+ 
+et
+ 
+35°C.
+ 
+Le
+ 
+système
+ 
+de
+ 
+chauffage
+ 
+sera
+ 
+réalisé
+ 
+par
+ 
+deux
+ 
+résistances
+ 
+électriques
+ 
+en
+ 
+parallèle
+ 
+de
+ 
+type
+ 
+HS50
+ 
+12R
+ 
+F.
+   
+Attribut  de  produit  Valeur  d'attribut  Fabricant:  Ohmite  Catégorie  du  produit:  Résistances  bobinées  -  montage  châssis  Résistance:  12  Ohms  Données  de  puissance:  50  W  Tension  de  voltage:  1.25  kV  Tolérance:  1  %  Style  du  raccordement:  Solder  Lug  Coefficient  de  température:  100  PPM  /  C  Longueur:  49  mm  Largeur:  14.2  mm  Hauteur:  14.8  mm  Température  de  fonctionnement  min.:  -  55  C  Température  de  fonctionnement  max.:  +  200  C  Série:  HS  Conditionnement:  Bulk  Marque:  Ohmite  Fonctionnalités:  Aluminum  Housed  Resistors  Style  de  montage:  Chassis  Mount  Type  de  produit:  Wirewound  Resistors   40  Sous-catégorie:  Resistors  Technologie:  Wirewound  Raccourcis  pour  l'article  N°:  HS50  12R  1%  Poids  de  l''unité:  25  g   
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+9 / 25  
+ 
+MUGOCHAUD   
+ Figure  6  :  Résistance  électrique  HS50  12R  F    Référence  de  conception :  CDT_ECLAIR  Exigences  client  vérifiées :  EXIG_ECLAIR  Compétences  GEII  :   C1b  Pour  éclairer  l’enceinte,  deux  LEDs  blanches  sont  présentes.   
+ Figure  7  :  LED  blanche    Référence  de  conception :  CDT_CABLAGE  Exigences  client  vérifiées :  EXIG_CABLAGE  Compétences  GEII  :   C1b   Pour  dimensionner  les  câbles,  nous  avons  besoin  de  connaître  le  courant  consommé  par  le  
+système.
+ 
+Ce
+ 
+sont
+ 
+les
+ 
+résistances
+ 
+chauffantes
+ 
+qui
+ 
+consomment
+ 
+le
+ 
+plus
+ 
+de
+ 
+courant.
+ 
+Selon
+ 
+le
+ 
+cahier
+ 
+des
+ 
+charges
+ 
+et
+ 
+la
+ 
+datasheet,
+ 
+il
+ 
+s’agit
+ 
+de
+ 
+2
+ 
+résistances
+ 
+de
+ 
+12Ω
+ 
+en
+ 
+parallèles
+ 
+: =  6Ω.  
+𝑅 1 × 𝑅 2
+𝑅
+1
+ 
++
+ 
+𝑅
+2
+=
+ 12 × 12
+12
++
+12
+En  sachant  que  la  tension  est  de  24V,  nous  pouvons  déterminer  le  courant  consommé  par  les  résistances  :   =  4A.  
+24
+6
+Nous  considérons  donc  que  le  courant  total  consommé  par  le  système  est  de  4A.  
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+10 / 25  
+ 
+
+MUGOCHAUD   
+Ensuite,  il  a  été  estimé  que  la  température  ambiante  dans  l’armoire  ne  dépasserait  pas  40°C.  
+Donc
+ 
+le
+ 
+coefficient
+ 
+de
+ 
+correction
+ 
+de
+ 
+température
+ 
+est
+ 
+de
+ 
+0.87.
+ 
+ D’autre  part,  les  câbles  fournis  sont  de  type  multibrins  avec  10  conducteurs,  le  coefficient  de  
+correction
+ 
+est
+ 
+donc
+ 
+de
+ 
+0.55.
+  
+ Figure  8  :  Tableaux  de  coefficients  de  correction  de  température  et  de  multiconducteur   Enfin,  le  cahier  des  charges  nous  impose  de  rajouter  une  marge  de  10%.  
+On  calcule  alors  :   =  9.28A  ⇒  jauge  18  avec  une  
+𝐼
+𝑐𝑜𝑒𝑓
+1
+×
+𝑐𝑜𝑒𝑓
+2
+×
+𝑐𝑜𝑒𝑓
+3
+=
+ 4
+0
+.
+87
+×
+0
+.
+55
+×
+0
+.
+9
+densité  de  courant  de  9.5A.   
+3.2.  Exigences  d’action   Référence  de  conception :  CDT_REGUL  Exigences  client  vérifiées :  EXIG_REGUL  Compétences  GEII  :   C1b   L’objectif  de  la  régulation  est  de  maintenir  la  température  intérieure  de  l’enceinte  à  50°C  avec  
+une
+ 
+erreur
+ 
+de
+  
+±0,1°C.
+ 
+Il
+ 
+faudra
+ 
+donc
+ 
+calculer
+ 
+la
+ 
+loi
+ 
+de
+ 
+commande
+ 
+pour
+ 
+réaliser
+ 
+la
+ 
+régulation.
+ 
+Un
+ 
+capteur
+ 
+de
+ 
+température
+ 
+de
+ 
+type
+ 
+PT1000
+ 
+IKE650/2MM
+ 
+est
+ 
+présent
+ 
+dans
+ 
+l’enceinte.
+ 
+Les
+ 
+caractéristiques
+ 
+sont
+ 
+les
+ 
+suivantes
+ 
+:
+ 
+ 
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+11 / 25  
+ 
+
+MUGOCHAUD   ●  Dimension  plongeur  :  Ø  6,0  x  50  mm  ●  Longueur  :  2m  ●  Précision  à  0°C:  ±  0,30°C  ●  Limites  de  température:  -50  à  180°C  ●  Câble  d'extension:  2  x  0,30  mm²  ●  Raccordement  par  fils  ●  Double  isolation 
+ Figure  9  :  Capteur  de  température  PT1000  
+3.3.  Grafcet  Référence  de  conception :  CDT_CYCL_FONCT  Exigences  client  vérifiées :  EXIG_CYCL_FONCT  Compétences  GEII  :   C1b   Le  grafcet  de  niveau  2  à  été  rédigé  ci-dessous  à  partir  du  grafcet  de  niveau  1  préalablement  
+effectué
+ 
+en
+ 
+phase
+ 
+de
+ 
+conception
+ 
+préliminaire.
+ 
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+12 / 25  
+ 
+
+MUGOCHAUD   
+ Figure  10  :  Grafcet  de  niveau  2   Grafcet niveau 2.png 
+3.4.  Programmation  Référence  de  conception :  CDT_CYCL_FONCT  
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+13 / 25  
+ 
+
+MUGOCHAUD   
+Exigences  client  vérifiées :  EXIG_CYCL_FONCT  Compétences  GEII  :   C1b  
+Figure  11  :  FAD  langage  de  programmation   MOC-FAD ProgrammationLa  FAD  ci-dessus  nous  permet  de  choisir  le  langage  LADDER  pour  la  programmation.    Une  fois  que  le  grafcet  est  terminé,  nous  pouvons  passer  à  la  programmation  sur  TIA  Portal.  Nous  utiliserons  le  langage  LADDER.  Le  programme  est  le  suivant  :    
+ 
+ 
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+14 / 25  
+ 
+
+MUGOCHAUD   
+ 
+ 
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+15 / 25  
+ 
+
+MUGOCHAUD   
+ 
+ 
+ 
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+16 / 25  
+ 
+
+MUGOCHAUD   
+ Figure  12  :  Programme  LADDER    
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+17 / 25  
+ 
+
+MUGOCHAUD   
+3.5.  Régulation  Référence  de  conception :  CDT_REGUL  Exigences  client  vérifiées :  EXIG_REGUL  Compétences  GEII  :   C1b   Pour  répondre  à  l’exigence  de  régulation  de  température,  nous  devons  implanter  un  régulateur  
+proportionnel
+ 
+dans
+ 
+l’automate
+ 
+sous
+ 
+TIA
+ 
+Portal.
+ Nous  commençons  par  ajouter  les  variables  et  blocs  nécessaires  dans  le  main,  afin  d’avoir  
+notre
+ 
+consigne.
+ 
+Nous
+ 
+pouvons
+ 
+ensuite
+ 
+créer
+ 
+une
+ 
+trace.
+ 
+ Figure  13  :  Création  des  blocs  nécessaire  à  la  trace   Nous  créons  donc  une  trace  en  y  ajoutant  les  variables  nécessaires.  
+ Figure  14  :  Création  des  variables  associées  à  la  trace   
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+18 / 25  
+ 
+
+MUGOCHAUD   
+Nous  ouvrons  ensuite  la  fenêtre  ‘diagramme  temporel’  afin  de  visualiser  la  courbe.  Il  n’y  a  plus  qu'à  
+lancer
+ 
+la
+ 
+régulation.
+ 
+Pour
+ 
+ce
+ 
+faire,
+ 
+nous
+ 
+avons
+ 
+créé
+ 
+précédemment
+ 
+la
+ 
+variable
+ 
+‘start_regul’
+ 
+dont
+ 
+on
+ 
+va
+ 
+forcer
+ 
+la
+ 
+valeur
+ 
+à
+ 
+1.
+ 
+Cette
+ 
+variable
+ 
+sera
+ 
+ajoutée
+ 
+plus
+ 
+tard
+ 
+dans
+ 
+le
+ 
+GPN.
+  Au  bout  d’environ  1h15,  nous  obtenons  la  réponse  en  température  ci-dessous  : 
+ Figure  15  :  Représentation  temporelle  de  la  température  intérieure  du  MUGOCHAUD  Cette  représentation  nous  permet  de  calculer  K  et  τ  :  Il  s’agit  d’un  échelon  u(t)  d’amplitude  5000  pas  CAN.  Nous  relevons  le  point  minimum   et   en  pas  CAN.  𝑠 ( 0 ) = 7508 𝑠 ( ∞ ) = 14812 Ainsi,  nous  pouvons  calculer  K  et  τ  :    ;  )  𝐾 =
+𝑠 ( 0 ) − 𝑠 ( ∞ )
+𝑢
+(
+0
+)
+−
+𝑢
+(
+∞
+)
+τ
+63%
+= 𝑠 ( 0 ) + 0 . 63 ( 𝑠 ( ∞ ) − 𝑠 ( 0 ) Application  numérique  :     
+𝐾
+ 
+=
+ 14812 − 7508
+5000
+=
+ 7304
+5000
+= 1 . 4608  τ
+63%
+= 7508 + 0 . 63 ( 14812 − 7508 ) = 12109 . 52  
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+19 / 25  
+ 
+
+MUGOCHAUD   
+Par  lecture  graphique,  nous  déterminons  que  la  valeur  de   est  environ  0.47  à  12109  pas  CAN  :  τ
+  Figure  16  :  Curseur  sur  la  représentation  temporelle  permettant  de  lire  la  valeur  de   τ   τ = 0 . 47 ℎ  ×  3600 = 1692 𝑠  Après  avoir  calculé  les  valeurs  de  K  et  ,  nous  pouvons  déterminer  les  valeurs  de   et  .  τ 𝐶
+0
+𝑇
+𝑖
+En  sachant  que  la  température  intérieure  doit  atteindre  50°C  en  moins  de  10  min,  nous  pouvons  
+déterminer
+ 
+le
+ 
+temps
+ 
+de
+ 
+montée
+ 
+:
+   𝑇
+𝑀
+= 10  𝑚𝑖𝑛  =  600 𝑠Ensuite  à  partir  du  temps  de  montée,  nous  calculons  la  pulsation  au  gain  unité   :   ω
+𝑢
+ 
+ω
+𝑢
+≈
+ 2
+𝑇
+𝑀
+≈
+ 2
+600
+≈ 0 . 003  𝑟𝑎𝑑 / 𝑠
+Selon  les  documents  fournis,  la  marge  de  phase  MP  =  60°.  A  partir  de  toutes  ces  données  nous  pouvons  calculer   et   afin  de  dimensionner  le  régulateur  𝐶
+0
+𝑇
+𝑖
+proportionnel.  Pour  cela  nous  utilisons  le  code  Matlab  fourni  dans  le  cours  d’Automatique  S4  p.66:    
+clear  clc  numH=[1.46];  %  Gain  K  denH=[1692  1];%  1+tau*p  wu=2/600;  Mp=60;  %  Marge  de  phase  [g,p]=bode(numH  ,denH  ,wu)  ;  %  calcul  gain  et  phase  Ti=1/wu*tan(pi/180*(90-180+Mp-p));  
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+20 / 25  
+ 
+
+MUGOCHAUD   
+C_0=1/(g*sqrt(1+(Ti*wu)^2)/(Ti*wu));  numC  =  C_0  *  [Ti  1];  denC  =  [Ti  0];  H  =  tf(numH,  denH);  C  =  tf(numC,  denC);  nichols(H  *  C)  grid  on 
+  Le  code  Matlab  ci-dessus  retourne  les  valeurs  suivantes  :   et  .  𝐶
+0
+= 3 𝑇
+𝑖
+= 356 . 83
+  Une  fois  toutes  les  valeurs  déterminées,  nous  pouvons  créer  le  bloc  de  régulation  ‘PID_Compact’  
+sur
+ 
+TIA
+ 
+Portal.
+ 
+Nous
+ 
+ajoutons
+ 
+ce
+ 
+bloc
+ 
+dans
+ 
+le
+ 
+bloc
+ 
+de
+ 
+programmation
+ 
+‘cyclic
+ 
+interrupt’.
+ 
+Il
+ 
+se
+ 
+situe
+ 
+après
+ 
+l’activation
+ 
+de
+ 
+la
+ 
+variable
+ 
+‘start_regul’
+ 
+donc
+ 
+maintenant
+ 
+la
+ 
+régulation
+ 
+PI
+ 
+se
+ 
+met
+ 
+en
+ 
+marche
+ 
+une
+ 
+fois
+ 
+que
+ 
+la
+ 
+variable
+ 
+‘star_regul’
+ 
+appelée.
+ 
+Nous
+ 
+la
+  
+plaçons
+ 
+donc
+ 
+au
+ 
+bon
+ 
+endroit
+ 
+dans
+ 
+le
+ 
+GPN
+ 
+(lorsque
+ 
+la
+ 
+porte
+ 
+est
+ 
+vérouillée).
+  
+ Figure  17  :  Création  du  bloc  de  régulation  PI   
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+21 / 25  
+ 
+
+MUGOCHAUD   
+Il  faut  ensuite  configurer  le  bloc  PI.  Il  s’agit  donc  dans  un  premier  temps  d’entrer  nos  valeurs  précédemment  déterminées  de   et   (  et  ).  𝐶
+0
+𝑇
+𝑖
+𝐶
+0
+= 3 𝑇
+𝑖
+= 356 . 83
+ 
+ Figure  18  :  Configuration  du  bloc  de  régulation  PI  (valeurs)  Il  faut  aussi  changer  le  type  de  régulation  à  ‘Température’  avec  son  unité  (°C)  puis  mettre  le  mode  à  
+‘Mode
+ 
+automatique’.
+ 
+ Figure  19  :  Configuration  du  bloc  de  régulation  PI  (type  de  régulation)  
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+22 / 25  
+ 
+
+MUGOCHAUD   
+Puis  nous  paramétrons  les  entrées/sorties,  le  bloc  PI  est  maintenant  prêt.  
+ Figure  20  :  Configuration  du  bloc  de  régulation  PI  (paramètres  d’entrée/sortie)   Enfin,  pour  que  les  valeurs  de  températures  soient  lisibles  par  le  bloc  PI,  il  faut  effectuer  la  
+conversion
+ 
+des
+ 
+valeurs
+ 
+entrant
+ 
+dans
+ 
+la
+ 
+variable
+ 
+‘capt_temp’
+ 
+puisqu'elles
+ 
+sont
+ 
+en
+ 
+pas
+ 
+CAN.
+ 
+ Toutes  les  étapes  nécessaires  à  la  régulation  de  température  ont  maintenant  été  effectuées.   
+ Figure  21  :  Conversion  des  valeurs  de  températures  pour  le  bloc  PI   Problèmes  rencontrés  :   Après  avoir  effectué  de  nombreux  essais,  nous  concluons  que  la  LED  à  l’intérieur  de  l’enceinte  ne  
+s’allume
+ 
+pas
+ 
+à
+ 
+cause
+ 
+d’un
+ 
+problème
+ 
+venant
+ 
+de
+ 
+l’automate
+ 
+et
+ 
+que
+ 
+la
+ 
+température
+ 
+de
+ 
+50°C
+ 
+n’est
+ 
+pas
+ 
+atteinte
+ 
+en
+ 
+moins
+ 
+de
+ 
+10
+ 
+minutes.
+  
+ 
+ 
+    
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+23 / 25  
+ 
+
+MUGOCHAUD   
+4.  
+Conclusion
+ 
+de
+ 
+la
+ 
+conception
+ 
+du
+ 
+produit
+ 
+Ce  document  synthétise  l'ensemble  des  choix  techniques  et  des  validations  réalisés  pour  le  
+MUGOCHAUD.
+ 
+Les
+ 
+phases
+ 
+de
+ 
+pré-conception
+ 
+et
+ 
+de
+ 
+conception
+ 
+détaillée
+ 
+ont
+ 
+permis
+ 
+d'élaborer
+ 
+une
+ 
+solution
+ 
+répondant
+ 
+globalement
+ 
+aux
+ 
+besoins
+ 
+du
+ 
+système.
+ 
+Sur  le  plan  matériel,  les  exigences  sont  globalement  respectées  avec  notamment  les  composants  ci  
+dessous
+ 
+:
+ 
+●  Le  capteur  de  proximité  inductif  pour  la  détection  de  la  porte  ●  L'électro-aimant  de  verrouillage  RS  PRO  ●  Les  résistances  de  chauffe  HS50  ●  Le  capteur  de  température  PT1000  pour  la  mesure  interne  
+Sur  le  plan  logiciel,  le  comportement  séquentiel  a  été  modélisé  par  des  chronogrammes  et  des  
+Grafcets
+ 
+(niveaux
+ 
+1
+ 
+et
+ 
+2)
+ 
+,
+ 
+traduits
+ 
+ensuite
+ 
+en
+ 
+langage
+ 
+LADDER
+ 
+sous
+ 
+TIA
+ 
+Portal.
+ 
+La
+ 
+régulation
+ 
+de
+ 
+la
+ 
+température
+ 
+a
+ 
+été
+ 
+assurée
+ 
+par
+ 
+l'implémentation
+ 
+et
+ 
+le
+ 
+paramétrage
+ 
+d'un
+ 
+régulateur
+ 
+PI
+ 
+(PID_Compact)
+ 
+calculé
+ 
+à
+ 
+partir
+ 
+de
+ 
+la
+ 
+réponse
+ 
+indicielle
+ 
+du
+ 
+système.
+ 
+Comme  l'illustre  la  matrice  de  conformité  ,  la  grande  majorité  des  exigences  client  sont  conformes.  
+Cependant,
+ 
+l'analyse
+ 
+met
+ 
+en
+ 
+évidence
+ 
+deux
+ 
+exigences
+ 
+non
+ 
+conformes
+ 
+nécessitant
+ 
+des
+ 
+actions
+ 
+correctives
+ 
+:
+ 
+●  EXIG_ECLAIR  ●  EXIG_MONTEE_TEMP  
+ 
+5.  
+Matrice
+ 
+de
+ 
+conformité
+ 
+du
+ 
+produit
+ 
+Ce  chapitre  synthétise  par  l'intermédiaire  d'un  tableau  la  conformité  du  produit  développé  par  
+rapport
+ 
+aux
+ 
+exigences
+ 
+issues
+ 
+du
+ 
+Cahier
+ 
+des
+ 
+Charges.
+ 
+Exigence  
+Méthodes   Vérification  
+Eléments  vérifiant  l'exigence  Statut  
+EXIG_CONST  Conception    Conforme  
+EXIG_DETECT_FERM  Conception  /  Essai   CDT_DETECT_FERM  Conforme  
+EXIG_VERROU  Conception  /  Essai   CDT_VERROU  Conforme  EXIG_AUTOM  Conception    Conforme  
+EXIG_CHAUF  
+Conception  /  Analyse  /  Simulation   
+CDT_CHAUFF  Conforme  
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+24 / 25  
+ 
+MUGOCHAUD   
+Exigence  
+Méthodes   Vérification  
+Eléments  vérifiant  l'exigence  Statut  
+EXIG_CABLAGE  Conception   CDT_CABLAGE  Conforme  EXIG_ECLAIR  Conception  /  Essai   CDT_ECLAIR  Non  conforme  EXIG_SECU_CHAUFF  Essai    Conforme  EXIG_COM_VERROU  Essai   CPR_CHRONOGRAMMES  Conforme  EXIG_MONTEE_TEMP  Simulation  /  Essai    Non  conforme  EXIG_REGUL  Simulation  /  Essai   CDT_REGUL  Conforme  EXIG_ARRET  Simulation  /  Essai    Conforme  EXIG_DEVEROUILLAGE  Essai   CPR_CHRONOGRAMMES  Conforme  EXIG_CYCL_FONCT  Essai   CPR_GRAFCET  /  CDT_CYCL_FONCT  Conforme  EXIG_MATERIEL  Conception    Conforme  
+ 
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDC_EQ06  Révision :  2  –   11/03/2026  
+25 / 25  
+ 
+
+========================================
+FILE: pdf\B4_DDF_EQ06_V1.pdf
+========================================
+Dossier  De  Fabrication  (DDF)  
+du  projet  
+MUGOCHAUD   
+         
+Responsabilité  documentaire  
+Action  NOM  Prénom  Fonction  Date  Signature  
+Rédigé  par  
+RAVIER  Alyssa  FELICETTI  Marius   
+Technicien  02/02/2026  
+  
+Approuvé  par  
+J.  SABATIER  P.  CAZAUX  (IUT  GEII  Bdx)  
+Chef  de  projet  02/02/2026  
+  
+Approuvé  par  Société  PCMI  Client  02/02/2026  
+  
+ 
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDF_EQ06  Révision :  1  –  02/02/2026  
+1 / 5  
+ 
+MUGOCHAUD   
+Suivi  des  révisions  documentaires  
+Indice  Date  Nature  de  la  révision  
+1  04/01/2016  
+Publication  préliminaire  du  DDF,  document  à  compléter  par  le  Technicien.  2  JJ/MM/AAAA  Première  publication           
+Documents  de  références  
+Sigle  Référence  Titre  Rév.  Origine  [CDC]  MOC_CDC  Cahier  des  charges  1  Société  PCMI  [DDC]  MOC_DDC_EQ06  Dossier  de  conception  2  IUT  GEII  Bdx       
+ 
+Table  des  matières  
+1.  Nature  du  document  3 2.  Documents  de  fabrication  du  produit  3 2.1.  Schéma  de  câblage  3 2.2.  Schéma  d'implantation  5 3.  Processus  de  fabrication  du  produit  6 4.  Matrice  de  conformité  du  produit  7   
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDF_EQ06  Révision :  1  –  02/02/2026  
+2 / 5  
+ 
+MUGOCHAUD   
+1.  Nature  du  document  
+Ce  document  est  un  dossier  de  fabrication.  Il  fournit  les  documents  de  fabrication  du  produit  
+développé.
+ 
+Il
+ 
+regroupe
+ 
+le
+ 
+schéma
+ 
+électrique,
+ 
+la
+ 
+nomenclature,
+ 
+les
+ 
+typons,
+ 
+le
+ 
+plan
+ 
+de
+ 
+perçage
+ 
+et
+ 
+le
+ 
+schéma
+ 
+d'implantation
+ 
+du
+ 
+produit.
+ 
+Il
+ 
+constitue
+ 
+une
+ 
+preuve
+ 
+de
+ 
+la
+ 
+conformité
+ 
+du
+ 
+produit.
+ 
+Chaque
+ 
+paragraphe
+ 
+fait
+ 
+donc
+ 
+clairement
+ 
+référence
+ 
+aux
+ 
+exigences
+ 
+client
+ 
+issues
+ 
+du
+ 
+[CDC].
+ L'ensemble  des  documents  de  ce  dossier  permet  également  au  client  de  produire  en  série  le  produit  
+développé.
+ 
+ 
+2.  Documents  de  fabrication  du  produit  
+Nous  avons  pris  soin  d'archiver  les  fichiers  de  conception  associés  au  projet.  Les  documents  de  
+fabrication
+ 
+du
+ 
+produit
+ 
+peuvent
+ 
+donc
+ 
+être
+ 
+exploités
+ 
+ou
+ 
+consultés
+ 
+en
+ 
+cas
+ 
+de
+ 
+besoin
+ 
+pendant
+ 
+ou
+ 
+après
+ 
+le
+ développement  du  produit.  L'ensemble  des  fichiers  est  disponible  dans  le  dossier :  Client 
+2.1.  Schéma  de  câblage  Référence  du  document :  FAB01  (schéma  électrique)  Exigences  client  vérifiées :  EXIG_CABLAGE  Fichier :  Liasse-MUGOCHAUD-V1-EQ06  |  Client\Liasse-MUGOCHAUD-V1-EQ06.qet   
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDF_EQ06  Révision :  1  –  02/02/2026  
+3 / 5  
+ 
+MUGOCHAUD   
+ Figure  1  :  Schéma  de  câblage  schéma_armoire_electrique_EQ06.png  La  procédure  est  détaillée  dans  le  LCF  :  MOC_LCF.docx   
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDF_EQ06  Révision :  1  –  02/02/2026  
+4 / 5  
+ 
+
+MUGOCHAUD   
+3.  
+Matrice
+ 
+de
+ 
+conformité
+ 
+du
+ 
+produit
+ 
+Ce  chapitre  synthétise  par  l'intermédiaire  d'un  tableau  la  conformité  du  produit  développé  par  
+rapport
+ 
+aux
+ 
+exigences
+ 
+issues
+ 
+du
+ 
+Cahier
+ 
+des
+ 
+Charges.
+ 
+Exigence  
+Méthodes   Vérification  
+Eléments  vérifiant  l'exigence  Statut  
+EX01  
+Inspection  documentaire  
+FAB01  Conforme  
+EX02  
+Inspection  documentaire  
+FAB02  
+Non  conforme                          
+ 
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_DDF_EQ06  Révision :  1  –  02/02/2026  
+5 / 5  
+ 
+
+========================================
+FILE: pdf\B4_MOC_LCF_V1.pdf
+========================================
+Liste  de  Contrôle  des  règles  de  Fabrication  (LCF)  
+du  projet  
+MUGOCHAUD  
+       
+Action  NOM  Prénom  Fonction  Date  Signature  
+Rédigé  par  
+F.  AUGEREAU  L.  THEOLIER  
+Resp.  qualité  01/09/2022  
+  
+Complété  par  
+  FELICETTI  Marius  RAVIER  Alyssa     
+Technicien  02/02/2026  
+  
+Vérification  autorisée  par  
+  <Nom  chef  projet>    
+Chef  de  projet  JJ/MM/AAAA   
+ 
+ IUT  Bordeaux  Département  GEii  
+Référence :  MOC _LCF_EQ06  Révision :  1  –  02/02/2026  
+1 / 6  
+ 
+MUGOCHAUD  
+1.  Procédure  de  fabrication  
+  
+ Figure  1  :  Schéma  de  câblage  du  système  schéma_armoire_electrique_EQ06.png      
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_LCF_EQ06  Révision :  1  –   02/02/2026  
+2 / 6  
+ 
+
+MUGOCHAUD  
+    
+ 
+                   
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_LCF_EQ06  Révision :  1  –   02/02/2026  
+3 / 6  
+ 
+ Opération  Conducteur  Couleur  Gauge  n°  de  Source  Broche  n°  à  Destination  Broche  n°  
+Etape  Opération  
+1  Identifier  Câble  multibrin  Noir  Gauge  18  de  Automate  Broche  DI  à  Bornier  Broche  14  
+2  Connecter  Câble  multibrin  Noir  Gauge  18  de  Automate  Broche  DI  à  
+Bornier  Broche  14  
+3  Identifier  Câble  multibrin  Noir  Gauge  18  de  Automate  Broche  DQ  à  Bornier  Broche  11  
+4  Connecter  Câble  multibrin  Noir  Gauge  18  de  Automate  Broche  DQ  à  Bornier  Broche  11  
+5  Identifier  Câble  multibrin  Bleu  Gauge  18  de  Fusible  6A  Broche  A2  à  Bornier  Broche  17  
+6  Connecter  Câble  multibrin  Bleu  Gauge  18  de  Fusible  6A  Broche  A2  à  Bornier  Broche  17  
+7  Identifier  Câble  multibrin  Rouge  Gauge  18  de  Fusible  6A  Broche  A1  à  Bornier  Broche  18  
+8  Connecter  Câble  multibrin  Rouge  Gauge  18  de  Fusible  6A  Broche  A1  à  Bornier  Broche  18  
+MUGOCHAUD  
+ Afin  de  procéder  à  la  connexion  des  différents  câbles,  le  protocole  suivant  détaille  les  étapes  
+spécifiques
+ 
+pour
+ 
+le
+ 
+câblage
+ 
+de
+ 
+l'armoire
+ 
+électrique,
+ 
+en
+ 
+assurant
+ 
+la
+ 
+conformité
+ 
+avec
+ 
+le
+ 
+schéma
+ 
+de
+ 
+câblage
+ 
+et
+ 
+les
+ 
+spécifications
+ 
+techniques.
+ 
+Chaque
+ 
+câble
+ 
+doit
+ 
+être
+ 
+correctement
+ 
+identifié,
+ 
+dénudé,
+ 
+serti
+ 
+et
+ 
+connecté
+ 
+à
+ 
+sa
+ 
+borne
+ 
+associée
+ 
+sur
+ 
+l'automate
+ 
+et
+ 
+le
+ 
+bornier.
+   Procédure  de  Connexion  des  Câbles  
+●  Câble  1  :  Noir,  Gauge  18  (Automate  DI  vers  Bornier  14)  ○  Récupérer  le  Câble  1.  ○  Dénuder  l'extrémité  côté  automate,  identifier  le  câble  puis  sertir  la  cosse  DI.  ○  Connecter  la  cosse  DI  à  la  borne  DI  de  l'Automate.  ○  Dénuder  l'extrémité  côté  bornier  et  sertir  la  cosse  14.  ○  Connecter  la  cosse  14  à  la  borne  14  du  Bornier.  
+ 
+●  Câble  2  :  Noir,  Gauge  18  (Automate  DQ  vers  Bornier  11)  ○  Récupérer  le  Câble  2.  ○  Dénuder  l'extrémité  côté  automate,  identifier  le  câble  et  sertir  la  cosse  DQ.  ○  Connecter  la  cosse  DQ  à  la  borne  DQ  de  l'Automate.  ○  Dénuder  l'extrémité  côté  bornier  et  sertir  la  cosse  11.  ○  Connecter  la  cosse  11  à  la  borne  11  du  Bornier.  
+ 
+●  Câble  3  :  Bleu,  Gauge  18  (Fusible  A2  vers  Bornier  17)  ○  Récupérer  le  Câble  3.  ○  Dénuder  l'extrémité  côté  fusible,  identifier  le  câble  puis  sertir  la  cosse  A2.  ○  Connecter  la  cosse  A2  à  la  borne  A2  du  Fusible  6A.  ○  Dénuder  l'extrémité  côté  bornier  et  sertir  la  cosse  17.  ○  Connecter  la  cosse  17  à  la  borne  17  du  Bornier.  
+ 
+●  Câble  4  :  Rouge,  Gauge  18  (Fusible  A1  vers  Bornier  18)  ○  Récupérer  le  Câble  4.  ○  Dénuder  l'extrémité  côté  fusible,  identifier  le  câble  puis  sertir  la  cosse  A1.  ○  Connecter  la  cosse  A1  à  la  borne  A1  du  Fusible  6A.  ○  Dénuder  l'extrémité  côté  bornier  et  sertir  la  cosse  18.  ○  Connecter  la  cosse  18  à  la  borne  18  du  Bornier.  
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_LCF_EQ06  Révision :  1  –   02/02/2026  
+4 / 6  
+ 
+MUGOCHAUD  
+ 
+2.  Procédure  d’implantation  Logicielle  
+Avant  de  commencer  la  programmation,  il  faut  veiller  à  configurer  correctement  TIA  Portal.  Tout  d’abord  il  faut  ajouter  l’automate  utilisé  soit  le  SIMATIC  S7-1200  >  CPU  1215C  >  
+AC/DC/RLY
+ 
+>
+ 
+6ES7
+ 
+215-1BG40-0XB0.
+ 
+Il
+ 
+sera
+ 
+nommé
+ 
+PLC_EQ06.
+  
+  Figure  2  :  Automate   Ensuite  nous  définissons  la  version  du  firmware,  donc  la  version  4.5.  Pour  pouvoir  établir  la  
+communication,
+ 
+il
+ 
+faut
+ 
+attribuer
+ 
+l’adresse
+ 
+IP
+ 
+correspondante
+ 
+192.168.30.56
+ 
+et
+ 
+configurer
+ 
+l’adresse
+ 
+de
+ 
+la
+ 
+passerelle
+ 
+192.168.30.254
+.
+  
+ Figure  3:  Configuration  adresse  IP  et  routeur   Ainsi  nous  pouvons  effectuer  la  compilation  matérielle,  ce  qui  permet  de  vérifier  la  cohérence  
+des
+ 
+paramètres
+ 
+configurés
+ 
+et
+ 
+génère
+ 
+les
+ 
+données
+ 
+nécessaires
+ 
+pour
+ 
+le
+ 
+chargement
+ 
+dans
+ 
+le
+ 
+PLC.
+ Pour  finir,  nous  sélectionnons  “charger  dans   l’appareil”  pour  établir  la  connexion  entre  le  PC  
+et
+ 
+l’automate.
+ 
+Il
+ 
+est
+ 
+important
+ 
+de
+ 
+bien
+ 
+choisir
+ 
+une
+ 
+liaison
+ 
+PN/IE
+ 
+pour
+ 
+l’automate
+ 
+et
+ 
+Intel
+ 
+pour
+ 
+le
+ 
+PC.
+  
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_LCF_EQ06  Révision :  1  –   02/02/2026  
+5 / 6  
+ 
+
+MUGOCHAUD  
+ 
+3.  Engagement  
+A  partir  du  contrôle  du  prototype,  je  déclare  le  prototype  conforme  au  dossier  de  fabrication  et  aux  règles  de  fabrication  énoncées  ci-dessus.  
+Nom  du  technicien :  
+Date :  
+Signature :  
+ 
+ 
+IUT  Bordeaux  Département  GEii  
+Référence :  MOC_LCF_EQ06  Révision :  1  –   02/02/2026  
+6 / 6  
+ 

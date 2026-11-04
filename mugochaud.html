@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport du Projet MUGOCHAUD | Marius Felicetti</title>
+    <meta name="description"
+        content="Rapport détaillé du projet d'automatisation et de régulation d'une enceinte climatique (MUGOCHAUD).">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">Port<span class="accent">folio</span>.</a>
+            <ul class="nav-links">
+                <li><a href="index.html#hero">Présentation</a></li>
+                <li><a href="index.html#presentation">Ma Formation</a></li>
+                <li><a href="index.html#competences">Compétences</a></li>
+                <li><a href="stage.html">Expérience professionnelle</a></li>
+                <li class="nav-item-dynamic">
+                    <a href="#" id="projets-btn" class="active">Projets <i
+                            class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                    <div class="dynamic-menu">
+                        <a href="kartahelice.html">Kart à Hélice</a>
+                        <a href="mugochaud.html" class="active" style="font-weight: bold;">MUGOCHAUD</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge">Enceinte Climatique</span>
+                    <h1>Projet <br><span class="gradient-text">MUGOCHAUD</span></h1>
+                    <p class="lead">Automatisation, régulation et vérification d'une enceinte climatique. Une
+                        exploration technique de l'automatisme et de l'électrotechnique.</p>
+                    <div class="hero-btns">
+                        <a href="#downloads" class="btn btn-primary">Télécharger les PDF</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="card-3d">
+                        <i class="fa-solid fa-temperature-half icon-3d"></i>
+                        <div class="card-content">
+                            <h3>PROJET MUGOCHAUD</h3>
+                            <p>Régulation thermique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Contexte -->
+        <section id="contexte" class="section">
+            <div class="container">
+                <h2 class="section-title">Contexte du Projet</h2>
+                <div class="content-card" style="display: flex; flex-direction: column; gap: 10px;">
+                    <p>Dans le cadre de ma 2e année de formation en parcours Automatisme et Informatique Industrielle,
+                        mon binôme a été chargé de réaliser le projet MUGOCHAUD avec pour objectifs principaux :</p>
+                    <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+                        <li><strong>L'automatisation :</strong> mettre en service et réguler une enceinte climatique.
+                        </li>
+                        <li><strong>La régulation thermique :</strong> maintenir une température interne de 50°C dans un
+                            environnement extérieur variable.</li>
+                        <li><strong>La mise en pratique technique :</strong> câblage électrique et programmation
+                            d'automate en langage LADDER (TIA Portal).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objectifs -->
+        <section id="objectifs" class="section">
+            <div class="container">
+                <h2 class="section-title">Objectifs Techniques</h2>
+                <div class="grid-3">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-thermometer-half"></i>
+                        <h3>Régulation</h3>
+                        <p>Maintenir la température avec précision (±0,1°C) grâce à un capteur de température et des
+                            résistances chauffantes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-lock"></i>
+                        <h3>Sécurité</h3>
+                        <p>Assurer le verrouillage de la porte (électro-aimant et capteur inductif) pendant tout le
+                            cycle de fonctionnement.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <h3>Automatisme</h3>
+                        <p>Programmation du cycle fonctionnel et d'un régulateur en langage LADDER sur un automate
+                            Siemens.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conception -->
+        <section id="conception" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Conception</h2>
+                <div class="split-layout">
+                    <div class="text-block">
+                        <h3>Développement & Ingénierie</h3>
+                        <p>Pour répondre au cahier des charges, notre travail de conception a englobé plusieurs phases
+                            de l'ingénierie électrique et de l'automatisme :</p>
+                        <ul class="check-list">
+                            <li><i class="fa-solid fa-check"></i> Modélisation du cycle par Grafcet de niveaux 1 et 2
+                            </li>
+                            <li><i class="fa-solid fa-check"></i> Dimensionnement et calcul de la section des câbles
+                            </li>
+                            <li><i class="fa-solid fa-check"></i> Câblage de l'armoire électrique</li>
+                            <li><i class="fa-solid fa-check"></i> Programmation de l'automate (traitement des signaux et
+                                régulation)</li>
+                        </ul>
+                    </div>
+                    <div class="visual-block" id="moc-container" style="position: relative; cursor: pointer;">
+                        <!-- Bottom image (always visible, but covered initially) -->
+                        <img src="MOC_ouvert.png" alt="Système MUGOCHAUD Ouvert" style="border-radius: 20px; width: 100%; display: block;">
+                        <!-- Top image (fades in and out to reveal the bottom image) -->
+                        <img id="moc-image" src="MOC.png" alt="Système MUGOCHAUD Fermé" style="border-radius: 20px; width: 100%; position: absolute; top: 0; left: 0; transition: opacity 0.5s ease-in-out;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fabrication -->
+        <section id="fabrication" class="section">
+            <div class="container">
+                <h2 class="section-title">Fabrication & Intégration</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Câblage de l'armoire électrique</h4>
+                            <p>Dimensionnement sécurisé de l'installation, identification des câbles et raccordement.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Programmation de l'automate</h4>
+                            <p>Développement du logigramme sous TIA Portal, en utilisant le langage LADDER pour la
+                                logique et la régulation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Tests effectués</h4>
+                            <p>Mise en service et validation du fonctionnement de la régulation, des capteurs et des
+                                divers actionneurs.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Vérification</h4>
+                            <p>Essais fonctionnels, mesure de conformité aux exigences et rédaction du dossier
+                                technique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vérification -->
+        <section id="verification" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Vérification & Tests</h2>
+                <div class="content-card">
+                    <p>Les procédures de tests ont permis de valider entièrement le comportement thermique et logique de
+                        l'enceinte.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">Validé</span>
+                            <span class="stat-label">Régulation Température</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Opérationnel</span>
+                            <span class="stat-label">Verrouillage Porte</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">OK</span>
+                            <span class="stat-label">Cycle Automate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloads -->
+        <section id="downloads" class="section">
+            <div class="container">
+                <h2 class="section-title">Documents du Projet</h2>
+                <div class="downloads-grid">
+                    <a href="pdf/B4_DDC_EQ06_V2.pdf" class="download-card" target="_blank">
+                        <div class="icon-box"><i class="fa-solid fa-file-pdf"></i></div>
+                        <div class="file-info">
+                            <h4>Dossier de Conception</h4>
+                            <span class="file-size">PDF Document</span>
+                        </div>
+                        <i class="fa-solid fa-download download-icon"></i>
+                    </a>
+                    <a href="pdf/B4_MOC_LCF_V1.pdf" class="download-card" target="_blank">
+                        <div class="icon-box"><i class="fa-solid fa-file-pdf"></i></div>
+                        <div class="file-info">
+                            <h4>Procédure de câblage</h4>
+                            <span class="file-size">PDF Document</span>
+                        </div>
+                        <i class="fa-solid fa-download download-icon"></i>
+                    </a>
+                    <a href="pdf/B4_DDV_EQ06_V1.pdf" class="download-card" target="_blank">
+                        <div class="icon-box"><i class="fa-solid fa-file-pdf"></i></div>
+                        <div class="file-info">
+                            <h4>Dossier de Vérification</h4>
+                            <span class="file-size">PDF Document</span>
+                        </div>
+                        <i class="fa-solid fa-download download-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+
+                <p>&copy; 2026 Marius Felicetti. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/marius-felicetti" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
