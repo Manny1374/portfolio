@@ -19,7 +19,12 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <script>try{document.documentElement.dataset.theme=localStorage.getItem("marius-portfolio-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 </head>
 
 <body>
@@ -31,8 +36,14 @@
             <ul class="nav-links">
                 <li><a href="#hero">Présentation</a></li>
                 <li><a href="#presentation">Ma Formation</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="stage.html">Expérience professionnelle</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li class="nav-item-dynamic">
+                    <a href="#" id="exp-btn">Expérience professionnelle <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                    <div class="dynamic-menu">
+                        <a href="stage.html">Stage</a>
+                        <a href="alternance.html">Alternance</a>
+                    </div>
+                </li>
                 <li class="nav-item-dynamic">
                     <a href="#" id="projets-btn">Projets <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
                     <div class="dynamic-menu">
@@ -41,10 +52,15 @@
                     </div>
                 </li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                        <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème" title="Passer en mode sombre">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </nav>
     </header>
@@ -60,14 +76,68 @@
                         et informatique industrielle.</p>
                 </div>
                 <div class="hero-visual">
-                    <div class="card-3d">
-                        <div class="media-placeholder" style="width:100%;height:100%;min-height:300px;border:0;"><i class="fa-regular fa-image"></i><strong>Ton portrait / une photo de projet</strong><small>Emplacement visuel à personnaliser</small></div><i class="fa-solid fa-file-lines icon-3d" style="font-size:2rem;margin:12px 0 0;"></i>
-                        <div class="card-content">
-                            <h3>Mon CV</h3>
-                            <a href="CV.pdf" target="_blank" class="btn btn-secondary" style="margin-top: 15px;">Voir
-                                mon CV <i class="fa-solid fa-download"></i></a>
+                    <div class="profile-orbit" aria-label="Espace réservé pour une photo de présentation">
+                        <div class="orbit-ring orbit-ring-one"></div>
+                        <div class="orbit-ring orbit-ring-two"></div>
+                        <div class="profile-placeholder">
+                            <i class="fa-solid fa-user-astronaut"></i>
+                            <span>Photo à ajouter</span>
+                        </div>
+                        <span class="orbit-chip chip-top"><i class="fa-solid fa-bolt"></i> GEII</span>
+                        <span class="orbit-chip chip-bottom"><i class="fa-solid fa-code"></i> AII</span>
+                    </div>
+                    <div class="cv-floating-card">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <div>
+                            <strong>Mon CV</strong>
+                            <a href="CV.pdf" target="_blank" rel="noopener">Consulter le CV <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-actions-section">
+            <div class="container hero-actions">
+                <a href="competences.html" class="btn btn-primary">Découvrir mes compétences <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="stage.html" class="btn btn-secondary">Mon expérience professionnelle</a>
+            </div>
+        </section>
+
+        <!-- Projets -->
+        <section id="projets" class="section projects-section">
+            <div class="container">
+                <span class="section-kicker">Réalisations</span>
+                <h2 class="section-title">Mes projets</h2>
+                <p class="section-intro">Quelques réalisations qui illustrent mon parcours en génie électrique, automatisme et informatique industrielle.</p>
+                <div class="project-showcase">
+                    <a class="project-card project-card-kart hidden" href="kartahelice.html">
+                        <div class="project-media">
+                            <img src="kart.jpg" alt="Projet de kart à hélice" loading="lazy">
+                            <span class="project-number">01 / PROJET</span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-type">Conception · Fabrication</span>
+                            <h3>Kart à Hélice</h3>
+                            <p>Conception et réalisation d’un kart propulsé par hélice, de l’étude technique aux essais.</p>
+                            <span class="project-link">Découvrir le projet <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                    <a class="project-card project-card-mugo hidden" href="mugochaud.html">
+                        <div class="project-media">
+                            <img src="MOC.png" alt="Enceinte climatique MUGOCHAUD" loading="lazy">
+                            <span class="project-number">02 / PROJET</span>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-type">Automatisme · Régulation</span>
+                            <h3>MUGOCHAUD</h3>
+                            <p>Automatisation et régulation d’une enceinte climatique avec une approche orientée système.</p>
+                            <span class="project-link">Découvrir le projet <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="projects-more">
+                    <a href="competences.html" class="text-link">Voir aussi mes compétences <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -87,51 +157,13 @@
                         <li><strong>La professionnalisation :</strong> développement de compétences concrètes et
                             opérationnelles dès l'obtention du diplôme.</li>
                     </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Compétences -->
-        <section id="competences" class="section alt-bg">
-            <div class="container">
-                <h2 class="section-title">Compétences</h2>
-                <div class="grid-3">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-code"></i>
-                        <h3>Informatique</h3>
-                        <p>Développement Arduino, Python. Programmation de microcontrôleurs (Arduino, STM32).</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fa-solid fa-microchip"></i>
-                        <h3>Électronique</h3>
-                        <p>Conception de cartes électroniques (KiCad), routage, soudure, brasage ...</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fa-solid fa-gears"></i>
-                        <h3>Automatisme</h3>
-                        <p>Programmation d'automates, régulation de systèmes et supervision industrielle.</p>
+                    <div style="margin-top: 30px; text-align: center;">
+                        <a href="competences.html" class="btn btn-primary">Découvrir mes compétences <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <section id="projets" class="section alt-bg">
-            <div class="container">
-                <h2 class="section-title">Projets sélectionnés</h2>
-                <p class="lead" style="margin:0 auto 36px;text-align:center;">Des réalisations concrètes entre électronique, automatisme et informatique industrielle.</p>
-                <div class="project-showcase">
-                    <a class="project-tile" href="kartahelice.html">
-                        <div class="media-placeholder"><i class="fa-regular fa-images"></i><strong>Emplacement photo / vidéo</strong><small>Projet Kart à Hélice · visuel principal</small></div>
-                        <div class="project-tile-copy"><span>Électronique embarquée</span><h3>Kart à Hélice</h3><p>Conception de cartes électroniques, communication infrarouge et pilotage à distance.</p></div>
-                    </a>
-                    <a class="project-tile" href="mugochaud.html">
-                        <div class="media-placeholder"><i class="fa-regular fa-images"></i><strong>Emplacement photo / vidéo</strong><small>Projet MUGOCHAUD · visuel principal</small></div>
-                        <div class="project-tile-copy"><span>Automatisme & régulation</span><h3>MUGOCHAUD</h3><p>Automatisation et régulation thermique d'une enceinte climatique.</p></div>
-                    </a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">

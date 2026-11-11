@@ -20,7 +20,12 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <script>try{document.documentElement.dataset.theme=localStorage.getItem("marius-portfolio-theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 </head>
 
 <body>
@@ -32,8 +37,14 @@
             <ul class="nav-links">
                 <li><a href="index.html#hero">Présentation</a></li>
                 <li><a href="index.html#presentation">Ma Formation</a></li>
-                <li><a href="index.html#competences">Compétences</a></li>
-                <li><a href="stage.html">Expérience professionnelle</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li class="nav-item-dynamic">
+                    <a href="#" id="exp-btn">Expérience professionnelle <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                    <div class="dynamic-menu">
+                        <a href="stage.html">Stage</a>
+                        <a href="alternance.html">Alternance</a>
+                    </div>
+                </li>
                 <li class="nav-item-dynamic">
                     <a href="#" id="projets-btn" class="active">Projets <i
                             class="fa-solid fa-chevron-down arrow-icon"></i></a>
@@ -43,10 +54,15 @@
                     </div>
                 </li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                        <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème" title="Passer en mode sombre">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </nav>
     </header>

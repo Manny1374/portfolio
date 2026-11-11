@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternance | Marius Felicetti</title>
+    <meta name="description" content="Présentation de l'alternance de Marius Felicetti en automatisme, maintenance et informatique industrielle (BUT GEII).">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">Port<span class="accent">folio</span>.</a>
+            <ul class="nav-links">
+                <li><a href="index.html#hero">Présentation</a></li>
+                <li><a href="index.html#presentation">Ma Formation</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li class="nav-item-dynamic">
+                    <a href="#" id="exp-btn" class="active">Expérience professionnelle <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                    <div class="dynamic-menu">
+                        <a href="stage.html">Stage</a>
+                        <a href="alternance.html" class="active" style="font-weight: bold;">Alternance</a>
+                    </div>
+                </li>
+                <li class="nav-item-dynamic">
+                    <a href="#" id="projets-btn">Projets <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                    <div class="dynamic-menu">
+                        <a href="kartahelice.html">Kart à Hélice</a>
+                        <a href="mugochaud.html">MUGOCHAUD</a>
+                    </div>
+                </li>
+            </ul>
+                        <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème" title="Passer en mode sombre">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge">Parcours Professionnalisant</span>
+                    <h1>Mon <br><span class="gradient-text">Alternance</span></h1>
+                    <p class="lead">Formation en alternance en <strong>Automatisme, Maintenance et Informatique Industrielle</strong> dans le cadre du BUT GEII à l'IUT de Bordeaux.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="#missions" class="btn btn-primary">Découvrir mes missions <i class="fa-solid fa-arrow-down" style="margin-left: 6px;"></i></a>
+                        <a href="#cadre" class="btn btn-secondary">Cadre de l'alternance <i class="fa-solid fa-building" style="margin-left: 6px;"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="card-3d">
+                        <i class="fa-solid fa-briefcase icon-3d"></i>
+                        <div class="card-content">
+                            <h3>Alternance BUT GEII</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 10px;">Immersion professionnelle & compétences terrain</p>
+                            <div class="skill-tags" style="margin-top: 20px;">
+                                <span class="skill-tag">Automatisme</span>
+                                <span class="skill-tag">Maintenance</span>
+                                <span class="skill-tag">IHM & Supervision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cadre de l'alternance -->
+        <section id="cadre" class="section">
+            <div class="container">
+                <h2 class="section-title">Cadre de l'Alternance</h2>
+                <div class="content-card">
+                    <p style="margin-bottom: 15px;">Le BUT Génie Électrique et Informatique Industrielle (Parcours AII) intègre l'alternance pour allier rigueur académique et application concrète en milieu industriel :</p>
+                    <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px;">
+                        <li><strong>Rythme & Organisation :</strong> Périodes d'immersion continue en entreprise alternées avec des sessions d'enseignement technologique à l'IUT de Bordeaux.</li>
+                        <li><strong>Objectif professionnel :</strong> Développer une solide expertise en diagnostic, programmation d'automates, maintenance préventive/corrective et conduite de projets industriels.</li>
+                        <li><strong>Environnement technique :</strong> Lignes automatisées, armoires électriques de puissance et de commande, automates industriels et progiciels de gestion.</li>
+                    </ul>
+
+                    <!-- Zone réservée à compléter par Marius -->
+                    <div class="placeholder-box" style="margin-top: 20px;">
+                        <i class="fa-solid fa-building-user"></i>
+                        <h5>Informations Entreprise & Contexte</h5>
+                        <p>Cette section sera complétée prochainement avec la présentation de l'entreprise d'accueil, du service d'affectation (maintenance / automatisme / bureau d'études), des équipements industriels pris en charge et des objectifs annuels.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Missions & Responsabilités -->
+        <section id="missions" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Missions & Domaines d'Intervention</h2>
+                <div class="grid-3">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-gears"></i>
+                        <h3>Automatisme & Régulation</h3>
+                        <p>Programmation et modification de programmes d'automates programmables industriels (API), paramétrage d'interfaces homme-machine (IHM) et régulation de boucles de contrôle.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">TIA Portal</span>
+                            <span class="skill-tag">Siemens</span>
+                            <span class="skill-tag">LADDER / Grafcet</span>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <h3>Maintenance & Dépannage</h3>
+                        <p>Diagnostic méthodique de pannes, interventions de maintenance corrective et préventive sur armoires électriques, remplacement de composants et remise en service sécurisée.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Dépannage</span>
+                            <span class="skill-tag">Armoires électriques</span>
+                            <span class="skill-tag">Consignation</span>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h3>Amélioration Continue & Suivi</h3>
+                        <p>Rédaction de modes opératoires et fiches d'intervention, fiabilisation des processus industriels, gestion des pièces de rechange et suivi d'indicateurs de performance.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">GMAO / SAP</span>
+                            <span class="skill-tag">Procédures</span>
+                            <span class="skill-tag">Sécurité</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projets & Réalisations -->
+        <section id="realisations" class="section">
+            <div class="container">
+                <h2 class="section-title">Projets & Réalisations Clés</h2>
+                <div class="content-card">
+                    <p style="margin-bottom: 20px;">Synthèse des projets d'envergure menés en entreprise au cours de l'alternance :</p>
+                    <div class="placeholder-box">
+                        <i class="fa-solid fa-list-check"></i>
+                        <h5>Réalisations en cours d'élaboration</h5>
+                        <p>Cette section sera complétée au fur et à mesure des missions de l'alternance : intégration d'équipements, rétrofit d'installations, fiabilisation de lignes de production et comptes rendus techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lien avec les compétences BUT GEII -->
+        <section class="section alt-bg">
+            <div class="container">
+                <div class="cta-banner">
+                    <h3>Compétences BUT GEII mobilisées</h3>
+                    <p>Cette expérience en entreprise met en œuvre les 4 compétences du référentiel national : <strong>Concevoir</strong>, <strong>Vérifier</strong>, <strong>Maintenir</strong> et <strong>Intégrer</strong>.</p>
+                    <div class="cta-actions">
+                        <a href="competences.html" class="btn btn-primary"><i class="fa-solid fa-layer-group" style="margin-right: 8px;"></i> Consulter les 4 compétences</a>
+                        <a href="stage.html" class="btn btn-secondary"><i class="fa-solid fa-train" style="margin-right: 8px;"></i> Découvrir mon Stage SNCF Réseau</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">IUT <span class="accent"> de Bordeaux</span>.</div>
+                <p>&copy; 2026 Marius Felicetti. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/marius-felicetti" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,45 +1,8 @@
 
-
-/* Shared theme: one preference for every page of the portfolio */
-(() => {
-  const key = 'marius-portfolio-theme';
-  let saved = 'dark';
-  try { saved = localStorage.getItem(key) || 'dark'; } catch (_) {}
-  document.documentElement.dataset.theme = saved === 'light' ? 'light' : 'dark';
-  document.addEventListener('DOMContentLoaded', () => {
-    const nav = document.querySelector('.nav-links');
-    if (nav && !document.querySelector('.theme-toggle')) {
-      const item = document.createElement('li');
-      item.className = 'theme-nav-item';
-      const button = document.createElement('button');
-      button.className = 'theme-toggle';
-      button.type = 'button';
-      button.setAttribute('aria-label', 'Changer le thème');
-      button.innerHTML = '<i class="fa-solid fa-sun" aria-hidden="true"></i><span>Clair</span>';
-      const update = () => {
-        const light = document.documentElement.dataset.theme === 'light';
-        button.innerHTML = light
-          ? '<i class="fa-solid fa-moon" aria-hidden="true"></i><span>Sombre</span>'
-          : '<i class="fa-solid fa-sun" aria-hidden="true"></i><span>Clair</span>';
-        button.setAttribute('aria-pressed', String(light));
-      };
-      button.addEventListener('click', () => {
-        const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-        document.documentElement.dataset.theme = next;
-        try { localStorage.setItem(key, next); } catch (_) {}
-        update();
-      });
-      item.appendChild(button);
-      nav.appendChild(item);
-      update();
-    }
-  });
-})();
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll Reveal Animation
-    const revealElements = document.querySelectorAll('.section-title, .content-card, .feature-card, .text-block, .visual-block, .timeline-item, .download-card');
+    const revealElements = document.querySelectorAll('.section-title, .content-card, .feature-card, .text-block, .visual-block, .timeline-item, .download-card, .cta-banner, .competence-detail-card, .comp-nav-card, .project-card, .hero-visual, .hero-text');
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -114,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (matchingLink) {
                 navLinks.forEach(link => {
-                    if (link.getAttribute('id') !== 'projets-btn') {
+                    if (link.getAttribute('id') !== 'projets-btn' && link.getAttribute('id') !== 'exp-btn') {
                         link.classList.remove('active');
                     }
                 });
@@ -164,6 +127,43 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(autoSlideInterval); // reset timer on manual interaction
             toggleImage();
             autoSlideInterval = setInterval(toggleImage, 10000); // restart timer
+        });
+    }
+
+    // Theme Switcher (Light / Dark mode)
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    const updateThemeIcon = (theme) => {
+        if (!themeToggleBtn) return;
+        const icon = themeToggleBtn.querySelector('i');
+        if (icon) {
+            if (theme === 'dark') {
+                icon.className = 'fa-solid fa-sun';
+                themeToggleBtn.setAttribute('title', 'Passer en mode clair');
+                themeToggleBtn.setAttribute('aria-label', 'Passer en mode clair');
+            } else {
+                icon.className = 'fa-solid fa-moon';
+                themeToggleBtn.setAttribute('title', 'Passer en mode sombre');
+                themeToggleBtn.setAttribute('aria-label', 'Passer en mode sombre');
+            }
+        }
+    };
+
+    const setTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('portfolio-theme', theme);
+        updateThemeIcon(theme);
+    };
+
+    // Initialize theme: default to 'light' per user preference
+    const activeTheme = localStorage.getItem('portfolio-theme') || 'light';
+    setTheme(activeTheme);
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
         });
     }
 });

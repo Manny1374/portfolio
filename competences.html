@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences BUT GEII | Marius Felicetti</title>
+    <meta name="description" content="Compétences nationales du BUT GEII (Parcours Automatisme et Informatique Industrielle) : Concevoir, Vérifier, Maintenir et Intégrer.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">Port<span class="accent">folio</span>.</a>
+            <ul class="nav-links">
+                <li><a href="index.html#hero">Présentation</a></li>
+                <li><a href="index.html#presentation">Ma Formation</a></li>
+                <li><a href="competences.html" class="active">Compétences</a></li>
+                <li class="nav-item-dynamic">
+                    <a href="#" id="exp-btn">Expérience professionnelle <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                    <div class="dynamic-menu">
+                        <a href="stage.html">Stage</a>
+                        <a href="alternance.html">Alternance</a>
+                    </div>
+                </li>
+                <li class="nav-item-dynamic">
+                    <a href="#" id="projets-btn">Projets <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                    <div class="dynamic-menu">
+                        <a href="kartahelice.html">Kart à Hélice</a>
+                        <a href="mugochaud.html">MUGOCHAUD</a>
+                    </div>
+                </li>
+            </ul>
+                        <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer de thème" title="Passer en mode sombre">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge">Référentiel National BUT GEII</span>
+                    <h1>Mes <br><span class="gradient-text">Compétences</span></h1>
+                    <p class="lead">Le parcours <strong>Automatisme et Informatique Industrielle (AII)</strong> du BUT GEII s'articule autour de 4 compétences majeures : <strong>Concevoir</strong>, <strong>Vérifier</strong>, <strong>Maintenir</strong> et <strong>Intégrer</strong>.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="#competences-liste" class="btn btn-primary">Explorer les 4 compétences <i class="fa-solid fa-arrow-down" style="margin-left: 6px;"></i></a>
+                        <a href="#referentiel" class="btn btn-secondary">Schéma de référence <i class="fa-solid fa-sitemap" style="margin-left: 6px;"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="card-3d">
+                        <i class="fa-solid fa-diagram-project icon-3d"></i>
+                        <div class="card-content">
+                            <h3>Parcours AII</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 8px;">Automatisme & Informatique Industrielle</p>
+                            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 20px; text-align: left; width: 100%;">
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 0.85rem;">
+                                    <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></span>
+                                    <span><strong>Concevoir</strong> (C.1 à C.4)</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 0.85rem;">
+                                    <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #f97316;"></span>
+                                    <span><strong>Vérifier</strong> (V.1 à V.2)</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 0.85rem;">
+                                    <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #eab308;"></span>
+                                    <span><strong>Maintenir</strong> (M.1 à M.2)</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 0.85rem;">
+                                    <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #10b981;"></span>
+                                    <span><strong>Intégrer</strong> (I.1.1 à I.1.2)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sommaire rapide des 4 compétences -->
+        <section id="competences-liste" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Les 4 Piliers de la Formation</h2>
+                <div class="grid-4">
+                    <!-- Nav Concevoir -->
+                    <a href="#concevoir" class="comp-nav-card comp-concevoir">
+                        <div>
+                            <span class="comp-tag-code">Compétence 1</span>
+                            <h4><i class="fa-solid fa-pen-ruler"></i> Concevoir</h4>
+                            <p class="comp-subtext">Cahier des charges, solutions techniques, maquettage et dossier de conception.</p>
+                        </div>
+                        <div class="arrow-link">Accéder à la partie <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+
+                    <!-- Nav Vérifier -->
+                    <a href="#verifier" class="comp-nav-card comp-verifier">
+                        <div>
+                            <span class="comp-tag-code">Compétence 2</span>
+                            <h4><i class="fa-solid fa-list-check"></i> Vérifier</h4>
+                            <p class="comp-subtext">Procédures d'essais, mesures, identification et correction des non-conformités.</p>
+                        </div>
+                        <div class="arrow-link">Accéder à la partie <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+
+                    <!-- Nav Maintenir -->
+                    <a href="#maintenir" class="comp-nav-card comp-maintenir">
+                        <div>
+                            <span class="comp-tag-code">Compétence 3</span>
+                            <h4><i class="fa-solid fa-screwdriver-wrench"></i> Maintenir</h4>
+                            <p class="comp-subtext">Maintenance préventive, corrective, améliorative et rédaction de procédures.</p>
+                        </div>
+                        <div class="arrow-link">Accéder à la partie <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+
+                    <!-- Nav Intégrer -->
+                    <a href="#integrer" class="comp-nav-card comp-integrer">
+                        <div>
+                            <span class="comp-tag-code">Compétence 4</span>
+                            <h4><i class="fa-solid fa-gears"></i> Intégrer (AII)</h4>
+                            <p class="comp-subtext">Installation, paramétrage, raccordements et mise en service de systèmes automatisés.</p>
+                        </div>
+                        <div class="arrow-link">Accéder à la partie <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Détail des compétences -->
+        <section class="section">
+            <div class="container">
+
+                <!-- 1. CONCEVOIR -->
+                <div id="concevoir" class="competence-detail-card comp-concevoir">
+                    <div class="comp-header">
+                        <div class="comp-title-group">
+                            <span class="comp-tag-code">Compétence 1 · BUT GEII</span>
+                            <h3>Compétence CONCEVOIR</h3>
+                            <p style="color: var(--text-muted); font-size: 1.05rem;">Déterminer les fonctions, élaborer des architectures matérielles et logicielles, valider par maquettage et documenter la conception.</p>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 15px; font-size: 1.15rem; color: var(--text-main);"><i class="fa-solid fa-diagram-project" style="color: #ef4444; margin-right: 8px;"></i> Sous-compétences visées :</h4>
+                    <div class="sub-competences-list">
+                        <div class="sub-comp-item">
+                            <span class="sub-comp-badge">C.1</span>
+                            <div class="sub-comp-text">J'identifie les fonctions demandées à la lecture du cahier des charges (architecture fonctionnelle - sans solution technique)</div>
+                        </div>
+                        <div class="sub-comp-item">
+                            <span class="sub-comp-badge">C.2</span>
+                            <div class="sub-comp-text">Je propose une solution technique pour répondre à une fonction</div>
+                        </div>
+                        <div class="sub-comp-item">
+                            <span class="sub-comp-badge">C.3</span>
+                            <div class="sub-comp-text">J'affine une solution technique en m'appuyant sur un maquettage numérique et/ou matériel</div>
+                        </div>
+                        <div class="sub-comp-item">
+                            <span class="sub-comp-badge">C.4</span>
+                            <div class="sub-comp-text">Je rédige un dossier de conception et de fabrication</div>
+                        </div>
+                    </div>
+
+                    <!-- Zone de contenu réservée pour complétion future -->
+                    <div class="placeholder-box">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <h5>Contenu et réalisations à compléter</h5>
+                        <p>Cette section sera complétée prochainement avec la présentation détaillée des projets mobilisant la conception (ex: Dossier de Conception DDC du projet <a href="mugochaud.html" style="color: #ef4444; font-weight: 600;">MUGOCHAUD</a>, modélisation et dimensionnement du projet <a href="kartahelice.html" style="color: #ef4444; font-weight: 600;">Kart à Hélice</a>).</p>
+                    </div>
+                </div>
+
+                <!-- 2. VÉRIFIER -->
+                <div id="verifier" class="competence-detail-card comp-verifier">
+                    <div class="comp-header">
+                        <div class="comp-title-group">
+                            <span class="comp-tag-code">Compétence 2 · BUT GEII</span>
+                            <h3>Compétence VÉRIFIER</h3>
+                            <p style="color: var(--text-muted); font-size: 1.05rem;">Définir des protocoles de mesures et d'essais, caractériser les signaux, identifier les anomalies et valider la conformité d'un prototype.</p>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 15px; font-size: 1.15rem; color: var(--text-main);"><i class="fa-solid fa-list-check" style="color: #f97316; margin-right: 8px;"></i> Sous-compétences visées :</h4>
+                    <div class="sub-competences-list">
+                        <div class="sub-comp-item">
+                            <span class="sub-comp-badge">V.1</span>
+                            <div class="sub-comp-text">J'applique, j'élabore, je rédige une procédure d'essais</div>
+                        </div>
+                        <div class="sub-comp-item">
+                            <span class="sub-comp-badge">V.2</span>
+                            <div class="sub-comp-text">J'identifie, je corrige les non-conformités d'un prototype</div>
+                        </div>
+                    </div>
+
+                    <!-- Zone de contenu réservée pour complétion future -->
+                    <div class="placeholder-box">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <h5>Contenu et réalisations à compléter</h5>
+                        <p>Cette section sera complétée prochainement avec les comptes rendus d'essais, les relevés de mesures (oscilloscope, multimètre) et les méthodes de correction des non-conformités rencontrées lors des phases de prototypage.</p>
+                    </div>
+                </div>
+
+                <!-- 3. MAINTENIR -->
+                <div id="maintenir" class="competence-detail-card comp-maintenir">
+                    <div class="comp-header">
+                        <div class="comp-title-group">
+                            <span class="comp-tag-code">Compétence 3 · BUT GEII</span>
+                            <h3>Compétence MAINTENIR</h3>
+                            <p style="color: var(--text-muted); font-size: 1.05rem;">Intervenir sur des installations industrielles, diagnostiquer des dysfonctionnements, effectuer des actions correctives et formaliser les procédures de maintenance.</p>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 15px; font-size: 1.15rem; color: var(--text-main);"><i class="fa-solid fa-screwdriver-wrench" style="color: #eab308; margin-right: 8px;"></i> Sous-compétences visées :</h4>
+                    <div class="sub-competences-list">
+                        <div class="sub-comp-item">
+                            <span class="sub-comp-badge">M.1</span>
+                            <div class="sub-comp-text">J'applique une opération de maintenance (préventive, corrective, améliorative) à un système</div>
+                        </div>
+                        <div class="sub-comp-item">
+                            <span class="sub-comp-badge">M.2</span>
+                            <div class="sub-comp-text">Je rédige la procédure de maintenance (préventive, corrective, améliorative) d'un système</div>
+                        </div>
+                    </div>
+
+                    <!-- Zone de contenu réservée pour complétion future -->
+                    <div class="placeholder-box">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <h5>Contenu et réalisations à compléter</h5>
+                        <p>Cette section sera complétée prochainement avec les interventions pratiques de maintenance (câblage et dépannage d'armoires électriques, diagnostic d'automates, inventaire technique chez Schneider Electric).</p>
+                    </div>
+                </div>
+
+                <!-- 4. INTÉGRER (AII) -->
+                <div id="integrer" class="competence-detail-card comp-integrer">
+                    <div class="comp-header">
+                        <div class="comp-title-group">
+                            <span class="comp-tag-code">Compétence 4 (AII) · BUT GEII</span>
+                            <h3>Compétence INTÉGRER (AII)</h3>
+                            <p style="color: var(--text-muted); font-size: 1.05rem;">Gérer et exécuter le processus d'installation, de raccordement, de programmation et de mise en service de systèmes automatisés et de supervision.</p>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 15px; font-size: 1.15rem; color: var(--text-main);"><i class="fa-solid fa-gears" style="color: #10b981; margin-right: 8px;"></i> Sous-compétences visées :</h4>
+                    <div class="sub-competences-list">
+                        <div class="sub-comp-item">
+                            <span class="sub-comp-badge">I.1.1</span>
+                            <div class="sub-comp-text">J'exécute l'installation et la mise en service d'un système</div>
+                        </div>
+                        <div class="sub-comp-item">
+                            <span class="sub-comp-badge">I.1.2</span>
+                            <div class="sub-comp-text">Je gère le processus d'installation et de mise en service d'un système</div>
+                        </div>
+                    </div>
+
+                    <!-- Zone de contenu réservée pour complétion future -->
+                    <div class="placeholder-box">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <h5>Contenu et réalisations à compléter</h5>
+                        <p>Cette section sera complétée prochainement avec les réalisations d'intégration industrielle (ex: paramétrage de l'automate SIROCCO et mise à jour des plans de contrôle lors du stage chez <a href="stage.html" style="color: #10b981; font-weight: 600;">SNCF Réseau</a>).</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Schéma officiel du Référentiel -->
+        <section id="referentiel" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Schéma du Référentiel National</h2>
+                <div class="referentiel-img-container">
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.05rem;">Cartographie officielle des compétences du BUT GEII, mettant en avant le parcours <strong>Automatisme et Informatique Industrielle (AII)</strong>.</p>
+                    <img src="competences.png" alt="Référentiel des compétences BUT GEII - Concevoir, Vérifier, Maintenir, Intégrer" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Passerelle vers les projets -->
+        <section class="section">
+            <div class="container">
+                <div class="cta-banner">
+                    <h3>Applications concrètes en projets & stage</h3>
+                    <p>Ces compétences s'articulent directement avec les projets réalisés au cours de la formation et de mon expérience en entreprise.</p>
+                    <div class="cta-actions">
+                        <a href="stage.html" class="btn btn-primary"><i class="fa-solid fa-train" style="margin-right: 8px;"></i> Stage SNCF Réseau</a>
+                        <a href="alternance.html" class="btn btn-secondary"><i class="fa-solid fa-briefcase" style="margin-right: 8px;"></i> Alternance</a>
+                        <a href="mugochaud.html" class="btn btn-secondary"><i class="fa-solid fa-mug-hot" style="margin-right: 8px;"></i> Projet MUGOCHAUD</a>
+                        <a href="kartahelice.html" class="btn btn-secondary"><i class="fa-solid fa-wind" style="margin-right: 8px;"></i> Projet Kart à Hélice</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">IUT <span class="accent"> de Bordeaux</span>.</div>
+                <p>&copy; 2026 Marius Felicetti. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/marius-felicetti" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
