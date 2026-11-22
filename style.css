@@ -1327,20 +1327,26 @@ body {
 
 /* Colissimo card: improve logo contrast in dark theme */
 [data-theme="dark"] .colissimo-card {
-    background: #334155;
+    background: #cbd5e1;
     background-image: none;
     backdrop-filter: none;
     box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32);
 }
 
 [data-theme="dark"] .colissimo-card .colissimo-logo {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 10px 14px;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
 }
 
 [data-theme="dark"] .colissimo-card .colissimo-description {
-    color: #f1f5f9;
+    color: #334155;
     font-size: 0.95rem;
     margin-top: 10px;
+}
+
+[data-theme="dark"] .colissimo-card .skill-tag {
+    color: #0f766e;
+    background: rgba(13, 148, 136, 0.1);
+    border-color: rgba(13, 148, 136, 0.25);
 }
