@@ -1323,24 +1323,3 @@ body {
         transition-duration: .01ms !important;
     }
 }
-
-
-/* Colissimo card: improve logo contrast in dark theme */
-[data-theme="dark"] .colissimo-card {
-    background: #334155;
-    background-image: none;
-    backdrop-filter: none;
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32);
-}
-
-[data-theme="dark"] .colissimo-card .colissimo-logo {
-    background: transparent;
-    border-radius: 0;
-    padding: 0;
-}
-
-[data-theme="dark"] .colissimo-card .colissimo-description {
-    color: #f1f5f9;
-    font-size: 0.95rem;
-    margin-top: 10px;
-}
